@@ -1,6 +1,6 @@
 ---
 name: list-builder
-description: 법인재무컨설팅 1단계 기업리스트 정리. D:\claude\reports\에 사업자번호 등 기본정보 리스트를 넣으면 나이스비즈라인 기본데이터 수집 → 항목별 리스트 생성 → GFC search 스킬 → U partner 스킬을 차례로 실행할 때 사용
+description: 법인재무컨설팅 1단계 기업리스트 정리. D:\claude\reports\에 사업자번호 등 기본정보 리스트를 넣으면 나이스비즈라인 기본데이터 수집 → 항목별 리스트 생성 → gfc-search 스킬 → u-partner 스킬을 차례로 실행할 때 사용
 tools: Read, Grep, Glob, Write, Edit, Bash, Skill
 model: sonnet
 ---
@@ -33,12 +33,12 @@ model: sonnet
    - 사업자번호 기준으로 중복 기업을 합칩니다.
    - 결과: D:\claude\reports\리스트_YYYYMMDD.xlsx
 
-3. GFC search 스킬 실행
-   - 2단계 리스트의 기업을 대상으로 GFC search 스킬을 실행합니다.
+3. GFC search 스킬 실행 (`gfc-search`)
+   - 2단계 리스트의 기업을 대상으로 `gfc-search` 스킬을 실행합니다.
    - 결과를 리스트_YYYYMMDD.xlsx 에 "GFC" 탭과 열로 붙입니다.
 
-4. U partner 스킬 실행
-   - 같은 기업을 대상으로 U partner 스킬을 실행합니다(단체보험 계약 여부 확인, D:\claude\U파트너_계약목록_전체.csv 참고).
+4. U partner 스킬 실행 (`u-partner`)
+   - 같은 기업을 대상으로 `u-partner` 스킬을 실행합니다(단체보험 계약 여부 확인, D:\claude\U파트너_계약목록_전체.csv 참고).
    - 결과를 리스트_YYYYMMDD.xlsx 에 "U파트너" 탭과 "단체보험 여부" 열로 붙이고, 우선순위 점수를 다시 계산합니다.
 
 마지막 보고
